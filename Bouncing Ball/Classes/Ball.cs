@@ -45,23 +45,23 @@ namespace Bouncing_Ball.Classes
             }
             center.X += velocity.X; // Move the ball X location based to its current X velocity
 
-            // Reverse Y velocity direction when the ball hit top boundary and add some bouciness to it.
+            // Stop the ball, reverse the Y velocity when it hit top boundary and give it a little push downward.
             if (center.Y <= radius)
             {
-                velocity.Y = -velocity.Y + bounciness;
+                velocity.Y = 1;
             }
 
             // Apply gravity to the ball if it is in the air.
             if (center.Y + radius < maxY)
             {
-                center.Y += velocity.Y; // Move the ball Y location based to its current Y velocity
-                velocity.Y += 1;        // Apply downward gravity on the ball every pass
+                velocity.Y += 1; // Apply downward gravity on the ball every pass
             }
             else // If the ball hit the floor make it bounce
             {
                 velocity.Y = -bounciness; // Remove current Y velocity and apply bounciness value to the ball -Y velocity
-                center.Y += velocity.Y;   // Move the ball Y location based to its current Y velocity
             }
+
+            center.Y += velocity.Y; // Move the ball Y location based to its current Y velocity
         }
 
         /// <summary>

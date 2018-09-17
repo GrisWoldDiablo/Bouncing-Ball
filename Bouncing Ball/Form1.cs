@@ -51,7 +51,7 @@ namespace Bouncing_Ball
                     rando.Next(100, maxX - 100),  // Random spawn location X
                     rando.Next(100, maxY - 100)), // Random spawn location Y
                     rando.Next(5, 50),            // Random size  
-                    rando.Next(20, 30))           // Random bounciness
+                    rando.Next(20, 50))           // Random bounciness
                     );
             }
 
